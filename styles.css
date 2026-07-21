@@ -443,3 +443,18 @@ button { font: inherit; }
   .leaflet-territory-map{height:560px;min-height:560px;}
   .commune-map-label span{font-size:9px;max-width:92px;padding:2px 4px;}
 }
+
+
+/* Carte communale fixe v7 */
+.static-territory-map{min-height:0!important;height:auto!important;padding:18px 20px 8px;display:block;position:relative;z-index:2;}
+.static-territory-map svg{display:block;width:100%;height:auto;max-height:720px;filter:drop-shadow(0 12px 22px rgba(31,100,125,.13));overflow:visible;}
+.commune-shape{stroke:#fff;stroke-width:3;vector-effect:non-scaling-stroke;cursor:pointer;transition:filter .18s ease,stroke-width .18s ease,opacity .18s ease;transform-box:fill-box;transform-origin:center;outline:none;}
+.commune-shape:hover,.commune-shape:focus{filter:brightness(1.08) saturate(1.08);stroke:#3C3C3B;stroke-width:4.5;}
+.commune-shape.is-selected{filter:brightness(1.04);stroke:#3C3C3B;stroke-width:5;}
+.commune-label{font-family:Nunito,sans-serif;font-weight:900;fill:#3C3C3B;pointer-events:none;paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:4px;stroke-linejoin:round;transition:font-size .18s ease,fill .18s ease;}
+.commune-label.is-hovered,.commune-label.is-selected{fill:#111;font-size:14px;}
+.label-leader{stroke:#3C3C3B;stroke-width:1.2;stroke-dasharray:3 3;opacity:.65;pointer-events:none;}
+.map-card{min-height:0!important;}
+.map-source-note{position:relative;z-index:2;padding:0 24px 22px;color:#5c6c70;font-size:.83rem;}
+.map-card::before{opacity:.12;}
+@media(max-width:760px){.static-territory-map{padding:8px}.commune-label{font-size:9px}.commune-label.is-hovered,.commune-label.is-selected{font-size:10px}.map-layout{grid-template-columns:1fr}.map-panel{margin-top:18px}}

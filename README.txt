@@ -32,3 +32,6 @@ La carte a besoin d'une connexion internet lors de son affichage, comme les poli
 
 CARTE V6
 La carte utilise désormais data/communes.geojson, généré à partir du shapefile fourni. Pour mettre à jour les chiffres, modifier uniquement data/donnees-communes.csv en conservant les codes INSEE.
+
+
+VERSION 7 : la carte est une image SVG fixe générée à partir du shapefile Communes_Chiro-Larzac. Aucun zoom ni fond cartographique.
