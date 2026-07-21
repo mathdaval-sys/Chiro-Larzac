@@ -1,0 +1,5 @@
+title: Chiro'Larzac
+url: ""
+baseurl: "/Chiro-Larzac"
+permalink: /actualites/:year/:month/:day/:title.html
+markdown: kramdown

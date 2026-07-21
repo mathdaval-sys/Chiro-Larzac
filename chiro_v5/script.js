@@ -1,5 +1,6 @@
 const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.main-nav');if(toggle&&nav){toggle.addEventListener('click',()=>{nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',nav.classList.contains('is-open'));});}
-function parseCSV(text){const lines=text.replace(/^\uFEFF/,'').trim().split(/\r?\n/);if(!lines.length)return[];const headers=lines[0].split(';').map(s=>s.trim());return lines.slice(1).filter(Boolean).map(line=>{const vals=line.split(';');return Object.fromEntries(headers.map((h,i)=>[h,(vals[i]||'').trim()]));});}
+function parseCSV(text){const lines=text.replace(/^﻿/,'').trim().split(/?
+/);if(!lines.length)return[];const headers=lines[0].split(';').map(s=>s.trim());return lines.slice(1).filter(Boolean).map(line=>{const vals=line.split(';');return Object.fromEntries(headers.map((h,i)=>[h,(vals[i]||'').trim()]));});}
 let communeData={};let communeGroups={};
 const cpieColors=['#8EC14F','#71BDD8','#EFBB3D','#E8DBAE'];
 const communeLayout=[
