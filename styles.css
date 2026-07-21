@@ -458,3 +458,26 @@ button { font: inherit; }
 .map-source-note{position:relative;z-index:2;padding:0 24px 22px;color:#5c6c70;font-size:.83rem;}
 .map-card::before{opacity:.12;}
 @media(max-width:760px){.static-territory-map{padding:8px}.commune-label{font-size:9px}.commune-label.is-hovered,.commune-label.is-selected{font-size:10px}.map-layout{grid-template-columns:1fr}.map-panel{margin-top:18px}}
+
+
+/* Carte agrandie et présentation publique — v8 */
+.container-map-large{width:min(96%,1660px);max-width:none;}
+.container-map-large .map-layout-simple{grid-template-columns:minmax(0,3fr) minmax(320px,1fr);gap:32px;align-items:start;}
+.container-map-large .map-card{width:100%;}
+.container-map-large .static-territory-map{padding:24px 26px 20px;}
+.container-map-large .static-territory-map svg{width:100%;max-height:none;height:auto;}
+.container-map-large .commune-label{font-size:15px;stroke-width:5px;}
+.container-map-large .commune-label.is-hovered,.container-map-large .commune-label.is-selected{font-size:17px;}
+.container-map-large .map-panel{position:sticky;top:105px;}
+.map-source-note,.map-warning{display:none!important;}
+@media(max-width:1180px){
+  .container-map-large .map-layout-simple{grid-template-columns:1fr;}
+  .container-map-large .map-panel{position:static;}
+  .container-map-large .commune-label{font-size:13px;}
+  .container-map-large .commune-label.is-hovered,.container-map-large .commune-label.is-selected{font-size:15px;}
+}
+@media(max-width:760px){
+  .container-map-large{width:min(98%,1000px);}
+  .container-map-large .static-territory-map{overflow-x:auto;padding:12px 8px;}
+  .container-map-large .static-territory-map svg{min-width:900px;}
+}
