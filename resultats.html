@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Résultats actualisés du programme Chiro'Larzac : carte communale, chiffres clés et espèces recensées.">
+  <title>Résultats — Chiro'Larzac</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path fill="#8EC14F" d="M31.8 25.4c-4.2-7.3-12.6-11.6-22.4-9.7 2.4 2.7 3.8 5.3 4.2 7.8-4.8-.5-8.7.8-11.5 4.1 6.2.3 10.2 2.7 12.1 7.1-3.5 1.4-6.2 4.1-8.1 8.2 8.2-1.4 14.7.3 19.6 5.1 1.8-4.2 3.8-7.6 6.1-10.2 2.2 2.6 4.3 6 6.1 10.2 4.9-4.8 11.4-6.5 19.6-5.1-1.9-4.1-4.6-6.8-8.1-8.2 1.9-4.4 5.9-6.8 12.1-7.1-2.8-3.3-6.7-4.6-11.5-4.1.4-2.5 1.8-5.1 4.2-7.8-9.8-1.9-18.2 2.4-22.4 9.7Z"/><circle cx="32" cy="31" r="5" fill="#EFBB3D"/></svg></span><span class="brand-text"><strong>Chiro'Larzac</strong><span>Résultats du programme</span></span></a>
+    <nav class="main-nav"><a href="index.html">Accueil</a><a href="index.html#projet">Le projet</a><a href="index.html#inventaires">Les inventaires</a><a href="actualite.html">Actualités</a><a class="active" href="resultats.html">Résultats</a><a href="index.html#participer">Participer</a></nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main>
+  <section class="article-hero results-hero">
+    <div class="container article-hero-content">
+      <div class="breadcrumb"><a href="index.html">Accueil</a> / Résultats</div>
+      <span class="tag">État actuel des connaissances</span>
+      <h1>Les résultats de Chiro'Larzac</h1>
+      <p class="article-lead">Cette page présente les données disponibles à ce jour. Elle sera mise à jour régulièrement au fur et à mesure des inventaires, des validations et des nouvelles découvertes.</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container update-notice">
+      <div><strong>Données en cours d'acquisition</strong><p>Une commune présentant peu de données n'est pas forcément moins riche : elle peut simplement avoir été moins prospectée. La date de mise à jour sera toujours indiquée.</p></div>
+      <span>Dernière mise à jour : à compléter</span>
+    </div>
+  </section>
+
+  <section class="section section-blue" id="carte">
+    <div class="container">
+      <div class="section-header"><span class="kicker">Résultats par commune</span><h2>La carte interactive</h2><p>La carte finale permettra d'afficher la richesse spécifique, le nombre de gîtes, les effectifs observés en gîte et l'effort de prospection. Les localisations précises des gîtes sensibles ne seront jamais publiées.</p></div>
+      <div class="map-layout">
+        <div class="map-card"><div class="territory-map">
+          <svg viewBox="0 0 720 520" role="img" aria-label="Carte de démonstration à remplacer par les vraies communes">
+            <path class="commune is-active" data-commune="sorbs" fill="#8EC14F" d="M281 55 385 33 455 92 422 175 312 174 253 119Z"/>
+            <path class="commune" data-commune="caylar" fill="#71BDD8" d="M456 92 561 82 637 146 596 234 482 223 422 175Z"/>
+            <path class="commune" data-commune="rives" fill="#EFBB3D" d="M144 91 253 119 312 174 267 253 154 244 94 173Z"/>
+            <path class="commune" data-commune="cros" fill="#E8DBAE" d="M267 253 312 174 422 175 482 223 446 316 340 332Z"/>
+            <path class="commune" data-commune="saintmaurice" fill="#8EC14F" d="M94 173 154 244 267 253 255 351 142 376 65 296Z"/>
+            <path class="commune" data-commune="pegairolles" fill="#71BDD8" d="M255 351 340 332 446 316 472 410 379 483 273 447Z"/>
+            <path class="commune" data-commune="vacquerie" fill="#EFBB3D" d="M446 316 482 223 596 234 655 321 593 414 472 410Z"/>
+            <path class="commune" data-commune="saintfelix" fill="#E8DBAE" d="M142 376 255 351 273 447 190 486 91 441Z"/>
+          </svg>
+          <div class="map-placeholder-label">Carte de démonstration — les vraies limites et données seront intégrées à l'étape suivante</div>
+        </div></div>
+        <aside class="map-panel"><span class="kicker">Commune sélectionnée</span><h3 id="map-name">Sorbs</h3><p class="map-sub">Exemple provisoire</p><div class="map-data"><div class="map-data-row"><span>Espèces recensées</span><strong id="map-species">—</strong></div><div class="map-data-row"><span>Gîtes connus</span><strong id="map-roosts">—</strong></div><div class="map-data-row"><span>Individus observés en gîte</span><strong id="map-bats">—</strong></div><div class="map-data-row"><span>Effort de prospection</span><strong id="map-effort">—</strong></div></div><div class="map-warning"><strong>Prochaine étape :</strong> intégrer ton tableau communal réel et les limites des communes exportées depuis QGIS.</div></aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="especes">
+    <div class="container">
+      <div class="section-header"><span class="kicker">Faune du territoire</span><h2>Les espèces connues</h2><p>Chaque fiche comportera une photographie, le nom français, le nom scientifique et un lien direct vers la monographie correspondante de la SFEPM.</p></div>
+      <div class="species-grid">
+        <article class="species-card species-placeholder"><div class="species-photo-placeholder">Photographie à ajouter</div><div class="species-copy"><h3>Grand rhinolophe</h3><p><em>Rhinolophus ferrumequinum</em></p><span class="species-link">Lien SFEPM à intégrer →</span></div></article>
+        <article class="species-card species-placeholder"><div class="species-photo-placeholder">Photographie à ajouter</div><div class="species-copy"><h3>Petit rhinolophe</h3><p><em>Rhinolophus hipposideros</em></p><span class="species-link">Lien SFEPM à intégrer →</span></div></article>
+        <article class="species-card species-placeholder"><div class="species-photo-placeholder">Photographie à ajouter</div><div class="species-copy"><h3>Minioptère de Schreibers</h3><p><em>Miniopterus schreibersii</em></p><span class="species-link">Lien SFEPM à intégrer →</span></div></article>
+        <article class="species-card species-placeholder"><div class="species-photo-placeholder">Photographie à ajouter</div><div class="species-copy"><h3>Barbastelle d'Europe</h3><p><em>Barbastella barbastellus</em></p><span class="species-link">Lien SFEPM à intégrer →</span></div></article>
+      </div>
+      <div class="species-next"><strong>Cette galerie est volontairement provisoire.</strong> La prochaine version contiendra la liste complète des espèces validées, les photographies autorisées et les liens SFEPM exacts.</div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/partenaires/logo-cpie-officiel.png" alt="CPIE des Causses Méridionaux"><div><strong>Chiro'Larzac</strong><br><span style="color:rgba(255,255,255,.7)">Un programme porté par le CPIE des Causses Méridionaux</span></div></div><div><h4>Navigation</h4><div class="footer-links"><a href="index.html">Accueil</a><a href="index.html#inventaires">Inventaires</a><a href="actualite.html">Actualités</a></div></div><div><h4>Contact</h4><div class="footer-links"><a href="mailto:contact@cpie-causses.org">contact@cpie-causses.org</a></div></div></div><div class="footer-bottom"><span>© 2026 CPIE des Causses Méridionaux</span><span>Résultats régulièrement actualisés.</span></div></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
