@@ -404,3 +404,42 @@ button { font: inherit; }
 .map-load-error{padding:2rem;font-weight:700;}
 @media (max-width:1100px){.map-layout-simple{grid-template-columns:1fr;}.territory-map-svg{min-height:620px;}}
 @media (max-width:760px){.territory-map-svg{min-height:540px;padding:12px;}.commune-label{font-size:9.5px;}.map-card{min-height:480px;}}
+
+
+/* Carte communale v6 - shapefile Chiro'Larzac */
+.leaflet-territory-map{
+  height:650px;
+  min-height:650px;
+  padding:0;
+  background:#e8f6fb;
+  z-index:1;
+}
+.leaflet-container{
+  font-family:Nunito,sans-serif;
+}
+.commune-map-label{
+  background:transparent;
+  border:0;
+}
+.commune-map-label span{
+  display:block;
+  transform:translate(-50%,-50%);
+  max-width:125px;
+  padding:3px 6px;
+  border-radius:8px;
+  background:rgba(255,255,255,.74);
+  color:#3C3C3B;
+  font-size:11px;
+  font-weight:900;
+  line-height:1.08;
+  text-align:center;
+  white-space:normal;
+  text-shadow:0 1px 0 rgba(255,255,255,.8);
+  box-shadow:0 2px 7px rgba(60,60,59,.1);
+}
+.map-card::before{pointer-events:none;z-index:0;}
+.map-source-note{position:relative;z-index:500;background:rgba(255,255,255,.82);}
+@media(max-width:760px){
+  .leaflet-territory-map{height:560px;min-height:560px;}
+  .commune-map-label span{font-size:9px;max-width:92px;padding:2px 4px;}
+}

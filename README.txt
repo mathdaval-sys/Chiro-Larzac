@@ -28,3 +28,7 @@ Les formes des communes sont désormais chargées automatiquement depuis l'API g
 Le fichier data/donnees-communes.csv contient une colonne "departement" : ne la supprimez pas.
 Vous ne modifiez toujours que les chiffres et la date de mise à jour. Les contours et les étiquettes sont automatiques.
 La carte a besoin d'une connexion internet lors de son affichage, comme les polices et la bibliothèque Leaflet du site.
+
+
+CARTE V6
+La carte utilise désormais data/communes.geojson, généré à partir du shapefile fourni. Pour mettre à jour les chiffres, modifier uniquement data/donnees-communes.csv en conservant les codes INSEE.
