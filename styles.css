@@ -481,3 +481,33 @@ button { font: inherit; }
   .container-map-large .static-territory-map{overflow-x:auto;padding:12px 8px;}
   .container-map-large .static-territory-map svg{min-width:900px;}
 }
+
+
+/* Logo Chiro'Larzac */
+.brand-mark-logo {
+  width: 72px;
+  height: 72px;
+  padding: 6px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(60,60,59,.12);
+}
+.brand-mark-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.footer-brand-project img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 20px;
+  padding: 6px;
+}
+@media (max-width:760px){
+  .brand-mark-logo { width: 58px; height: 58px; padding: 4px; border-radius: 14px; }
+  .brand-text strong { font-size: 1.22rem; }
+  .brand-text span { font-size: .66rem; }
+}
