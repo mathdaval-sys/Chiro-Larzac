@@ -21,3 +21,10 @@ IMPORTANT
 - Ne modifiez pas la première colonne « id » du fichier CSV.
 - Ne publiez jamais la localisation précise d’un gîte sensible.
 - Les contours de la carte sont volontairement schématiques.
+
+MISE À JOUR DE LA CARTE — VERSION À CONTOURS RÉELS
+---------------------------------------------------
+Les formes des communes sont désormais chargées automatiquement depuis l'API géographique officielle de l'État.
+Le fichier data/donnees-communes.csv contient une colonne "departement" : ne la supprimez pas.
+Vous ne modifiez toujours que les chiffres et la date de mise à jour. Les contours et les étiquettes sont automatiques.
+La carte a besoin d'une connexion internet lors de son affichage, comme les polices et la bibliothèque Leaflet du site.
