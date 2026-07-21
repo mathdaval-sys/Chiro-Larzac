@@ -1,76 +1,108 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Résultats actualisés du programme Chiro'Larzac : carte communale, chiffres clés et espèces recensées.">
-  <title>Résultats — Chiro'Larzac</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path fill="#8EC14F" d="M31.8 25.4c-4.2-7.3-12.6-11.6-22.4-9.7 2.4 2.7 3.8 5.3 4.2 7.8-4.8-.5-8.7.8-11.5 4.1 6.2.3 10.2 2.7 12.1 7.1-3.5 1.4-6.2 4.1-8.1 8.2 8.2-1.4 14.7.3 19.6 5.1 1.8-4.2 3.8-7.6 6.1-10.2 2.2 2.6 4.3 6 6.1 10.2 4.9-4.8 11.4-6.5 19.6-5.1-1.9-4.1-4.6-6.8-8.1-8.2 1.9-4.4 5.9-6.8 12.1-7.1-2.8-3.3-6.7-4.6-11.5-4.1.4-2.5 1.8-5.1 4.2-7.8-9.8-1.9-18.2 2.4-22.4 9.7Z"/><circle cx="32" cy="31" r="5" fill="#EFBB3D"/></svg></span><span class="brand-text"><strong>Chiro'Larzac</strong><span>Résultats du programme</span></span></a>
-    <nav class="main-nav"><a href="index.html">Accueil</a><a href="index.html#projet">Le projet</a><a href="index.html#inventaires">Les inventaires</a><a href="actualite.html">Actualités</a><a class="active" href="resultats.html">Résultats</a><a href="index.html#participer">Participer</a></nav>
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</header>
-<main>
-  <section class="article-hero results-hero">
-    <div class="container article-hero-content">
-      <div class="breadcrumb"><a href="index.html">Accueil</a> / Résultats</div>
-      <span class="tag">État actuel des connaissances</span>
-      <h1>Les résultats de Chiro'Larzac</h1>
-      <p class="article-lead">Cette page présente les données disponibles à ce jour. Elle sera mise à jour régulièrement au fur et à mesure des inventaires, des validations et des nouvelles découvertes.</p>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="container update-notice">
-      <div><strong>Données en cours d'acquisition</strong><p>Une commune présentant peu de données n'est pas forcément moins riche : elle peut simplement avoir été moins prospectée. La date de mise à jour sera toujours indiquée.</p></div>
-      <span>Dernière mise à jour : à compléter</span>
-    </div>
-  </section>
-
-  <section class="section section-blue" id="carte">
-    <div class="container">
-      <div class="section-header"><span class="kicker">Résultats par commune</span><h2>La carte interactive</h2><p>La carte finale permettra d'afficher la richesse spécifique, le nombre de gîtes, les effectifs observés en gîte et l'effort de prospection. Les localisations précises des gîtes sensibles ne seront jamais publiées.</p></div>
-      <div class="map-layout">
-        <div class="map-card"><div class="territory-map">
-          <svg viewBox="0 0 720 520" role="img" aria-label="Carte de démonstration à remplacer par les vraies communes">
-            <path class="commune is-active" data-commune="sorbs" fill="#8EC14F" d="M281 55 385 33 455 92 422 175 312 174 253 119Z"/>
-            <path class="commune" data-commune="caylar" fill="#71BDD8" d="M456 92 561 82 637 146 596 234 482 223 422 175Z"/>
-            <path class="commune" data-commune="rives" fill="#EFBB3D" d="M144 91 253 119 312 174 267 253 154 244 94 173Z"/>
-            <path class="commune" data-commune="cros" fill="#E8DBAE" d="M267 253 312 174 422 175 482 223 446 316 340 332Z"/>
-            <path class="commune" data-commune="saintmaurice" fill="#8EC14F" d="M94 173 154 244 267 253 255 351 142 376 65 296Z"/>
-            <path class="commune" data-commune="pegairolles" fill="#71BDD8" d="M255 351 340 332 446 316 472 410 379 483 273 447Z"/>
-            <path class="commune" data-commune="vacquerie" fill="#EFBB3D" d="M446 316 482 223 596 234 655 321 593 414 472 410Z"/>
-            <path class="commune" data-commune="saintfelix" fill="#E8DBAE" d="M142 376 255 351 273 447 190 486 91 441Z"/>
-          </svg>
-          <div class="map-placeholder-label">Carte de démonstration — les vraies limites et données seront intégrées à l'étape suivante</div>
-        </div></div>
-        <aside class="map-panel"><span class="kicker">Commune sélectionnée</span><h3 id="map-name">Sorbs</h3><p class="map-sub">Exemple provisoire</p><div class="map-data"><div class="map-data-row"><span>Espèces recensées</span><strong id="map-species">—</strong></div><div class="map-data-row"><span>Gîtes connus</span><strong id="map-roosts">—</strong></div><div class="map-data-row"><span>Individus observés en gîte</span><strong id="map-bats">—</strong></div><div class="map-data-row"><span>Effort de prospection</span><strong id="map-effort">—</strong></div></div><div class="map-warning"><strong>Prochaine étape :</strong> intégrer ton tableau communal réel et les limites des communes exportées depuis QGIS.</div></aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-white" id="especes">
-    <div class="container">
-      <div class="section-header"><span class="kicker">Faune du territoire</span><h2>Les espèces connues</h2><p>Chaque fiche comportera une photographie, le nom français, le nom scientifique et un lien direct vers la monographie correspondante de la SFEPM.</p></div>
-      <div class="species-grid">
-        <article class="species-card species-placeholder"><div class="species-photo-placeholder">Photographie à ajouter</div><div class="species-copy"><h3>Grand rhinolophe</h3><p><em>Rhinolophus ferrumequinum</em></p><span class="species-link">Lien SFEPM à intégrer →</span></div></article>
-        <article class="species-card species-placeholder"><div class="species-photo-placeholder">Photographie à ajouter</div><div class="species-copy"><h3>Petit rhinolophe</h3><p><em>Rhinolophus hipposideros</em></p><span class="species-link">Lien SFEPM à intégrer →</span></div></article>
-        <article class="species-card species-placeholder"><div class="species-photo-placeholder">Photographie à ajouter</div><div class="species-copy"><h3>Minioptère de Schreibers</h3><p><em>Miniopterus schreibersii</em></p><span class="species-link">Lien SFEPM à intégrer →</span></div></article>
-        <article class="species-card species-placeholder"><div class="species-photo-placeholder">Photographie à ajouter</div><div class="species-copy"><h3>Barbastelle d'Europe</h3><p><em>Barbastella barbastellus</em></p><span class="species-link">Lien SFEPM à intégrer →</span></div></article>
-      </div>
-      <div class="species-next"><strong>Cette galerie est volontairement provisoire.</strong> La prochaine version contiendra la liste complète des espèces validées, les photographies autorisées et les liens SFEPM exacts.</div>
-    </div>
-  </section>
-</main>
-<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/partenaires/logo-cpie-officiel.png" alt="CPIE des Causses Méridionaux"><div><strong>Chiro'Larzac</strong><br><span style="color:rgba(255,255,255,.7)">Un programme porté par le CPIE des Causses Méridionaux</span></div></div><div><h4>Navigation</h4><div class="footer-links"><a href="index.html">Accueil</a><a href="index.html#inventaires">Inventaires</a><a href="actualite.html">Actualités</a></div></div><div><h4>Contact</h4><div class="footer-links"><a href="mailto:contact@cpie-causses.org">contact@cpie-causses.org</a></div></div></div><div class="footer-bottom"><span>© 2026 CPIE des Causses Méridionaux</span><span>Résultats régulièrement actualisés.</span></div></div></footer>
-<script src="script.js"></script>
-</body>
-</html>
+---
+layout: null
+---
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Résultats actualisés du programme Chiro'Larzac."><title>Résultats — Chiro'Larzac</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path fill="#8EC14F" d="M31.8 25.4c-4.2-7.3-12.6-11.6-22.4-9.7 2.4 2.7 3.8 5.3 4.2 7.8-4.8-.5-8.7.8-11.5 4.1 6.2.3 10.2 2.7 12.1 7.1-3.5 1.4-6.2 4.1-8.1 8.2 8.2-1.4 14.7.3 19.6 5.1 1.8-4.2 3.8-7.6 6.1-10.2 2.2 2.6 4.3 6 6.1 10.2 4.9-4.8 11.4-6.5 19.6-5.1-1.9-4.1-4.6-6.8-8.1-8.2 1.9-4.4 5.9-6.8 12.1-7.1-2.8-3.3-6.7-4.6-11.5-4.1.4-2.5 1.8-5.1 4.2-7.8-9.8-1.9-18.2 2.4-22.4 9.7Z"/><circle cx="32" cy="31" r="5" fill="#EFBB3D"/></svg></span><span class="brand-text"><strong>Chiro'Larzac</strong><span>Résultats du programme</span></span></a><nav class="main-nav"><a href="index.html">Accueil</a><a href="index.html#projet">Le projet</a><a href="index.html#inventaires">Les inventaires</a><a href="actualites.html">Actualités</a><a class="active" href="resultats.html">Résultats</a><a href="index.html#participer">Participer</a></nav><button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header>
+<main><section class="article-hero results-hero"><div class="container article-hero-content"><div class="breadcrumb"><a href="index.html">Accueil</a> / Résultats</div><span class="tag">État actuel des connaissances</span><h1>Les résultats de Chiro'Larzac</h1><p class="article-lead">Les données présentées correspondent à l'état actuel des connaissances. Elles seront complétées et actualisées régulièrement à mesure de l'avancement du programme.</p></div></section>
+<section class="section-sm"><div class="container update-notice"><div><strong>Une carte évolutive</strong><p>Une commune présentant peu de données n'est pas nécessairement moins riche : elle peut simplement avoir été moins prospectée. Les localisations précises des gîtes ne sont pas publiées.</p></div><span id="global-update">Dernière mise à jour : non renseignée</span></div></section>
+<section class="section section-blue" id="carte"><div class="container"><div class="section-header"><span class="kicker">Résultats par commune</span><h2>La carte interactive</h2><p>Sélectionnez l'indicateur à représenter, puis cliquez sur une commune pour consulter les données disponibles.</p></div>
+<div class="map-controls" role="group" aria-label="Indicateur cartographique"><button class="map-filter is-active" data-metric="nb_especes">Nombre d'espèces</button><button class="map-filter" data-metric="nb_gites">Nombre de gîtes</button><button class="map-filter" data-metric="nb_individus">Individus observés</button><button class="map-filter" data-metric="batiments_prospectes">Bâtiments prospectés</button><button class="map-filter" data-metric="cavites_prospectees">Cavités prospectées</button><button class="map-filter" data-metric="nuits_acoustiques">Nuits acoustiques</button></div>
+<div class="map-layout"><div class="map-card"><div class="territory-map"><svg viewBox="0 0 890 650" role="img" aria-label="Carte schématique des communes du programme Chiro'Larzac"><g class="commune-group" data-commune="vissec" tabindex="0" role="button" aria-label="Vissec">
+      <polygon class="commune" points="382,114 472,108 486,140 476,177 386,181 374,148"></polygon>
+      <text class="commune-label" x="430" y="149"><tspan x="430" dy="0">Vissec</tspan></text>
+    </g>
+<g class="commune-group" data-commune="le-caylar" tabindex="0" role="button" aria-label="Le Caylar">
+      <polygon class="commune" points="137,104 227,99 241,130 231,167 141,171 129,138"></polygon>
+      <text class="commune-label" x="185" y="139"><tspan x="185" dy="0">Le Caylar</tspan></text>
+    </g>
+<g class="commune-group" data-commune="les-rives" tabindex="0" role="button" aria-label="Les Rives">
+      <polygon class="commune" points="47,59 137,56 151,85 141,122 51,126 39,93"></polygon>
+      <text class="commune-label" x="95" y="94"><tspan x="95" dy="0">Les Rives</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-michel" tabindex="0" role="button" aria-label="Saint-Michel-d’Alajou">
+      <polygon class="commune" points="257,214 347,209 361,240 351,277 261,281 249,248"></polygon>
+      <text class="commune-label" x="305" y="243"><tspan x="305" dy="0">Saint-Michel</tspan><tspan x="305" dy="12">d’Alajou</tspan></text>
+    </g>
+<g class="commune-group" data-commune="le-cros" tabindex="0" role="button" aria-label="Le Cros">
+      <polygon class="commune" points="32,144 122,138 136,170 126,207 36,211 24,178"></polygon>
+      <text class="commune-label" x="80" y="179"><tspan x="80" dy="0">Le Cros</tspan></text>
+    </g>
+<g class="commune-group" data-commune="sorbs" tabindex="0" role="button" aria-label="Sorbs">
+      <polygon class="commune" points="137,204 227,199 241,230 231,267 141,271 129,238"></polygon>
+      <text class="commune-label" x="185" y="239"><tspan x="185" dy="0">Sorbs</tspan></text>
+    </g>
+<g class="commune-group" data-commune="romiguieres" tabindex="0" role="button" aria-label="Romiguières">
+      <polygon class="commune" points="302,84 392,81 406,110 396,147 306,151 294,118"></polygon>
+      <text class="commune-label" x="350" y="119"><tspan x="350" dy="0">Romiguières</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-felix" tabindex="0" role="button" aria-label="Saint-Félix-de-l’Héras">
+      <polygon class="commune" points="227,134 317,129 331,160 321,197 231,201 219,168"></polygon>
+      <text class="commune-label" x="275" y="163"><tspan x="275" dy="0">Saint-Félix-de</tspan><tspan x="275" dy="12">l’Héras</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-maurice" tabindex="0" role="button" aria-label="Saint-Maurice-Navacelles">
+      <polygon class="commune" points="390,189 514,183 528,220 518,262 394,266 382,228"></polygon>
+      <text class="commune-label" x="455" y="223"><tspan x="455" dy="0">Saint-Maurice</tspan><tspan x="455" dy="12">Navacelles</tspan></text>
+    </g>
+<g class="commune-group" data-commune="la-vacquerie" tabindex="0" role="button" aria-label="La Vacquerie-et-Saint-Martin-de-Castries">
+      <polygon class="commune" points="502,237 622,232 636,270 626,314 506,318 494,278"></polygon>
+      <text class="commune-label" x="565" y="267"><tspan x="565" dy="0">La Vacquerie-et</tspan><tspan x="565" dy="12">Saint-Martin-de</tspan><tspan x="565" dy="12">Castries</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-jean-bueges" tabindex="0" role="button" aria-label="Saint-Jean-de-Buèges">
+      <polygon class="commune" points="676,296 788,291 802,325 792,365 680,369 668,333"></polygon>
+      <text class="commune-label" x="735" y="328"><tspan x="735" dy="0">Saint-Jean-de</tspan><tspan x="735" dy="12">Buèges</tspan></text>
+    </g>
+<g class="commune-group" data-commune="pegairolles" tabindex="0" role="button" aria-label="Pégairolles-de-l’Escalette">
+      <polygon class="commune" points="257,313 367,308 381,345 371,388 261,392 249,353"></polygon>
+      <text class="commune-label" x="315" y="348"><tspan x="315" dy="0">Pégairolles-de</tspan><tspan x="315" dy="12">l’Escalette</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-pierre" tabindex="0" role="button" aria-label="Saint-Pierre-de-la-Fage">
+      <polygon class="commune" points="397,299 487,292 501,325 491,362 401,366 389,333"></polygon>
+      <text class="commune-label" x="445" y="328"><tspan x="445" dy="0">Saint-Pierre-de</tspan><tspan x="445" dy="12">la-Fage</tspan></text>
+    </g>
+<g class="commune-group" data-commune="lauroux" tabindex="0" role="button" aria-label="Lauroux">
+      <polygon class="commune" points="202,399 292,393 306,425 296,462 206,466 194,433"></polygon>
+      <text class="commune-label" x="250" y="434"><tspan x="250" dy="0">Lauroux</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-etienne" tabindex="0" role="button" aria-label="Saint-Étienne-de-Gourgas">
+      <polygon class="commune" points="332,374 442,369 456,405 446,447 336,451 324,413"></polygon>
+      <text class="commune-label" x="390" y="408"><tspan x="390" dy="0">Saint-Étienne-de</tspan><tspan x="390" dy="12">Gourgas</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-privat" tabindex="0" role="button" aria-label="Saint-Privat">
+      <polygon class="commune" points="472,394 562,388 576,420 566,457 476,461 464,428"></polygon>
+      <text class="commune-label" x="520" y="429"><tspan x="520" dy="0">Saint-Privat</tspan></text>
+    </g>
+<g class="commune-group" data-commune="soubes" tabindex="0" role="button" aria-label="Soubès">
+      <polygon class="commune" points="302,474 392,469 406,500 396,537 306,541 294,508"></polygon>
+      <text class="commune-label" x="350" y="509"><tspan x="350" dy="0">Soubès</tspan></text>
+    </g>
+<g class="commune-group" data-commune="arboras" tabindex="0" role="button" aria-label="Arboras">
+      <polygon class="commune" points="687,424 777,419 791,450 781,487 691,491 679,458"></polygon>
+      <text class="commune-label" x="735" y="459"><tspan x="735" dy="0">Arboras</tspan></text>
+    </g>
+<g class="commune-group" data-commune="fozieres" tabindex="0" role="button" aria-label="Fozières">
+      <polygon class="commune" points="142,489 232,482 246,515 236,552 146,556 134,523"></polygon>
+      <text class="commune-label" x="190" y="524"><tspan x="190" dy="0">Fozières</tspan></text>
+    </g>
+<g class="commune-group" data-commune="les-plans" tabindex="0" role="button" aria-label="Les Plans">
+      <polygon class="commune" points="212,514 302,507 316,540 306,577 216,581 204,548"></polygon>
+      <text class="commune-label" x="260" y="549"><tspan x="260" dy="0">Les Plans</tspan></text>
+    </g>
+<g class="commune-group" data-commune="poujols" tabindex="0" role="button" aria-label="Poujols">
+      <polygon class="commune" points="247,434 337,427 351,460 341,497 251,501 239,468"></polygon>
+      <text class="commune-label" x="295" y="469"><tspan x="295" dy="0">Poujols</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-jean-blaquiere" tabindex="0" role="button" aria-label="Saint-Jean-de-la-Blaquière">
+      <polygon class="commune" points="480,520 604,517 618,550 608,591 484,595 472,558"></polygon>
+      <text class="commune-label" x="545" y="553"><tspan x="545" dy="0">Saint-Jean-de-la</tspan><tspan x="545" dy="12">Blaquière</tspan></text>
+    </g>
+<g class="commune-group" data-commune="saint-saturnin" tabindex="0" role="button" aria-label="Saint-Saturnin-de-Lucian">
+      <polygon class="commune" points="589,471 705,465 719,500 709,540 593,544 581,508"></polygon>
+      <text class="commune-label" x="650" y="503"><tspan x="650" dy="0">Saint-Saturnin-de</tspan><tspan x="650" dy="12">Lucian</tspan></text>
+    </g>
+<g class="commune-group" data-commune="soumont" tabindex="0" role="button" aria-label="Soumont">
+      <polygon class="commune" points="362,534 452,530 466,560 456,597 366,601 354,568"></polygon>
+      <text class="commune-label" x="410" y="569"><tspan x="410" dy="0">Soumont</tspan></text>
+    </g></svg><div class="schematic-note">Carte schématique : les positions relatives sont respectées, les contours sont volontairement simplifiés.</div><div class="map-legend" id="map-legend"></div></div></div>
+<aside class="map-panel"><span class="kicker">Commune sélectionnée</span><h3 id="map-name">Choisissez une commune</h3><p class="map-sub" id="map-date">Cliquez directement sur son nom ou sa forme.</p><div class="map-data"><div class="map-data-row"><span>Espèces recensées</span><strong id="map-species">—</strong></div><div class="map-data-row"><span>Gîtes connus</span><strong id="map-roosts">—</strong></div><div class="map-data-row"><span>Individus observés en gîte</span><strong id="map-bats">—</strong></div><div class="map-data-row"><span>Bâtiments prospectés</span><strong id="map-buildings">—</strong></div><div class="map-data-row"><span>Cavités prospectées</span><strong id="map-caves">—</strong></div><div class="map-data-row"><span>Nuits acoustiques</span><strong id="map-nights">—</strong></div></div><div class="map-warning"><strong>Mise à jour facile :</strong> les chiffres proviennent du fichier <code>data/donnees-communes.csv</code>. Il suffit de modifier ce tableau sur GitHub, sans toucher au code de la carte.</div></aside></div></div></section>
+<section class="section section-white" id="especes"><div class="container"><div class="section-header"><span class="kicker">Faune du territoire</span><h2>Les espèces connues</h2><p>La galerie complète avec photographies et liens directs vers les monographies de la SFEPM sera ajoutée dans l'étape suivante.</p></div><div id="species-grid" class="species-grid"></div></div></section></main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/partenaires/logo-cpie-officiel.png" alt="CPIE des Causses Méridionaux"><div><strong>Chiro'Larzac</strong><br><span style="color:rgba(255,255,255,.7)">Un programme porté par le CPIE des Causses Méridionaux</span></div></div><div><h4>Navigation</h4><div class="footer-links"><a href="index.html">Accueil</a><a href="actualites.html">Actualités</a><a href="resultats.html">Résultats</a></div></div><div><h4>Contact</h4><div class="footer-links"><a href="mailto:contact@cpie-causses.org">contact@cpie-causses.org</a></div></div></div><div class="footer-bottom"><span>© 2026 CPIE des Causses Méridionaux</span><span>Données régulièrement actualisées.</span></div></div></footer><script src="script.js"></script></body></html>

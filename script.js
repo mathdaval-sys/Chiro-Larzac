@@ -1,29 +1,10 @@
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', nav.classList.contains('is-open'));
-  });
-}
-
-const communeNames = {
-  sorbs: 'Sorbs',
-  caylar: 'Le Caylar',
-  rives: 'Les Rives',
-  cros: 'Le Cros',
-  saintmaurice: 'Saint-Maurice-Navacelles',
-  pegairolles: 'Pégairolles-de-l’Escalette',
-  vacquerie: 'La Vacquerie-et-Saint-Martin',
-  saintfelix: 'Saint-Félix-de-l’Héras'
-};
-
-document.querySelectorAll('.commune').forEach(shape => {
-  shape.addEventListener('click', () => {
-    document.querySelectorAll('.commune').forEach(el => el.classList.remove('is-active'));
-    shape.classList.add('is-active');
-    const name = communeNames[shape.dataset.commune];
-    const nameTarget = document.querySelector('#map-name');
-    if (name && nameTarget) nameTarget.textContent = name;
-  });
-});
+const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.main-nav');if(toggle&&nav){toggle.addEventListener('click',()=>{nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',nav.classList.contains('is-open'));});}
+function parseCSV(text){const lines=text.replace(/^\uFEFF/,'').trim().split(/\r?\n/);if(!lines.length)return[];const headers=lines[0].split(';').map(s=>s.trim());return lines.slice(1).filter(Boolean).map(line=>{const vals=line.split(';');return Object.fromEntries(headers.map((h,i)=>[h,(vals[i]||'').trim()]));});}
+const metricLabels={nb_especes:"Nombre d'espèces",nb_gites:'Nombre de gîtes',nb_individus:'Individus observés',batiments_prospectes:'Bâtiments prospectés',cavites_prospectees:'Cavités prospectées',nuits_acoustiques:'Nuits acoustiques'};
+const palette=['#edf3e2','#d6e9c0','#b8db94','#8ec14f','#5c9937','#2d6f39'];let communeData={};let currentMetric='nb_especes';
+function valueOrDash(v){return v===''||v==null?'—':v;}
+function selectCommune(id){document.querySelectorAll('.commune-group').forEach(g=>g.classList.toggle('is-active',g.dataset.commune===id));const d=communeData[id];if(!d)return;document.querySelector('#map-name').textContent=d.commune;document.querySelector('#map-date').textContent=d.date_maj?`Données mises à jour le ${d.date_maj}`:'Date de mise à jour non renseignée';document.querySelector('#map-species').textContent=valueOrDash(d.nb_especes);document.querySelector('#map-roosts').textContent=valueOrDash(d.nb_gites);document.querySelector('#map-bats').textContent=valueOrDash(d.nb_individus);document.querySelector('#map-buildings').textContent=valueOrDash(d.batiments_prospectes);document.querySelector('#map-caves').textContent=valueOrDash(d.cavites_prospectees);document.querySelector('#map-nights').textContent=valueOrDash(d.nuits_acoustiques);}
+function colorMap(metric){currentMetric=metric;const vals=Object.values(communeData).map(d=>Number(d[metric])).filter(v=>Number.isFinite(v)&&v>0);const max=vals.length?Math.max(...vals):0;document.querySelectorAll('.commune-group').forEach(g=>{const d=communeData[g.dataset.commune];const p=g.querySelector('.commune');if(!d||d[metric]===''){p.style.fill='#e5e5df';p.classList.add('no-data');return;}p.classList.remove('no-data');const v=Number(d[metric])||0;const idx=max?Math.min(palette.length-1,Math.floor((v/max)*(palette.length-1))):0;p.style.fill=palette[idx];});const legend=document.querySelector('#map-legend');if(legend){legend.innerHTML=`<span><i style="background:#e5e5df"></i>Aucune donnée saisie</span><span><i style="background:${palette[1]}"></i>Faible</span><span><i style="background:${palette[3]}"></i>Moyen</span><span><i style="background:${palette[5]}"></i>Élevé</span>`;}}
+async function initMap(){const groups=[...document.querySelectorAll('.commune-group')];if(!groups.length)return;try{const res=await fetch('data/donnees-communes.csv',{cache:'no-store'});const rows=parseCSV(await res.text());rows.forEach(d=>communeData[d.id]=d);groups.forEach(g=>{const activate=()=>selectCommune(g.dataset.commune);g.addEventListener('click',activate);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate();}});});document.querySelectorAll('.map-filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.map-filter').forEach(b=>b.classList.remove('is-active'));btn.classList.add('is-active');colorMap(btn.dataset.metric);}));colorMap(currentMetric);const dates=rows.map(r=>r.date_maj).filter(Boolean).sort();if(dates.length)document.querySelector('#global-update').textContent=`Dernière mise à jour : ${dates.at(-1)}`;}catch(e){console.error(e);}}
+async function initSpecies(){const grid=document.querySelector('#species-grid');if(!grid)return;try{const rows=await (await fetch('data/especes.json',{cache:'no-store'})).json();grid.innerHTML=rows.map(s=>`<article class="species-card"><div class="species-photo-placeholder">Photo à ajouter</div><div class="species-copy"><h3><a href="${s.lien_sfepm}" target="_blank" rel="noopener">${s.nom}</a></h3><p><em>${s.scientifique}</em></p><a class="species-link" href="${s.lien_sfepm}" target="_blank" rel="noopener">Voir la monographie SFEPM →</a></div></article>`).join('');}catch(e){console.error(e);}}
+initMap();initSpecies();

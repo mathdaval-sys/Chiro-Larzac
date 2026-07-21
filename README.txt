@@ -1,19 +1,23 @@
-MAQUETTE CHIRO'LARZAC
+CHIRO’LARZAC — VERSION AUTONOME
 
-Contenu :
-- index.html : page d'accueil
-- actualite.html : exemple d'article
-- styles.css : toute la mise en forme
-- script.js : menu mobile et carte de démonstration
-- assets/ : images et logo
+MISE À JOUR DE LA CARTE
+1. Dans GitHub, ouvrez data/donnees-communes.csv.
+2. Cliquez sur le crayon « Edit this file ».
+3. Remplissez ou modifiez uniquement les chiffres après le nom de la commune.
+4. Respectez les points-virgules ; laissez une case vide si la donnée n’est pas connue.
+5. Indiquez la date sous la forme 2026-07-21.
+6. Cliquez sur « Commit changes ».
+La carte se met à jour automatiquement après la publication de GitHub Pages.
 
-Pour ouvrir la maquette :
-1. Décompresser l'archive.
-2. Double-cliquer sur index.html.
-3. Les liens entre les deux pages fonctionnent sans installation.
+AJOUT D’UNE ACTUALITÉ
+1. Téléversez d’abord la photographie dans assets/images/actualites/.
+2. Ouvrez MODELE-ACTUALITE.md et copiez son contenu.
+3. Dans le dossier _posts, créez un fichier nommé AAAA-MM-JJ-titre-court.md.
+4. Collez le modèle et remplacez le titre, la date, le résumé, le nom de l’image et le texte.
+5. Cliquez sur « Commit changes ».
+La page de l’article et la liste des actualités sont générées automatiquement.
 
-La maquette reprend la palette officielle 2024 du CPIE des Causses Méridionaux :
-#8EC14F, #71BDD8, #EFBB3D, #E8DBAE, #3C3C3B et la police Nunito.
-
-Les données de la carte et la plupart des chiffres sont fictifs.
-Les photographies d'illustration proviennent de Wikimedia Commons et leurs crédits figurent dans le pied de page.
+IMPORTANT
+- Ne modifiez pas la première colonne « id » du fichier CSV.
+- Ne publiez jamais la localisation précise d’un gîte sensible.
+- Les contours de la carte sont volontairement schématiques.
